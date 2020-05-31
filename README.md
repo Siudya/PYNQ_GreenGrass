@@ -8,11 +8,11 @@ The following diagram shows the basic architecture of AWS IoT Greengrass.
 Please refer to [What Is AWS IoT Greengrass?](https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html) for more information about AWS IoT Greengrass.
 
 ## Preparation
-- 1 PYNQ-Z2 boards ( PYNQ v2.4)
+- 3 PYNQ-Z2 boards ( PYNQ v2.4)
 - AWS account
 - 1 router
 
-Conncet the PYNQ-Z2 boards and host PC to LAN ports of router. Conncet WAN port of router to the Internet.
+Conncet the 3 PYNQ-Z2 boards and host PC to LAN ports of router. Conncet WAN port of router to the Internet.
 ![](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/first.jpg)
 
 ## Step by Step
