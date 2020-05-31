@@ -1,20 +1,20 @@
-from pynq.overlays.base import BaseOverlay
+#from pynq.overlays.base import BaseOverlay
 from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
 from time import sleep
 from datetime import date, datetime
 import math
 import socket
-from pynq.lib.arduino import Grove_LEDbar
-from pynq.lib.arduino import ARDUINO_GROVE_G4
-from pynq.lib import MicroblazeLibrary
+#from pynq.lib.arduino import Grove_LEDbar
+#from pynq.lib.arduino import ARDUINO_GROVE_G4
+#from pynq.lib import MicroblazeLibrary
 import numpy as np
 #import lps25h
 #import hts221
 #import adafruit_lsm9ds1
 # initialize GPIO
-base = BaseOverlay("base.bit")
-ledbar = Grove_LEDbar(base.ARDUINO,ARDUINO_GROVE_G4)
-ledbar.reset()
+#base = BaseOverlay("base.bit")
+#ledbar = Grove_LEDbar(base.ARDUINO,ARDUINO_GROVE_G4)
+#ledbar.reset()
 
 i = 1
 
@@ -59,8 +59,8 @@ def customCallback(client, userdata, message):
         #ledbar.reset()
     '''
     # the highest tem is 40
-    i = max((int(tmp / 4))%10,0)
-    ledbar.write_level(i,2,1)
+    #i = max((int(tmp / 4))%10,0)
+    #ledbar.write_level(i,2,1)
     #base.leds[btn-1].on()
     #sleep(0.2)
     #base.leds[btn-1].off()
