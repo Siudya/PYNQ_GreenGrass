@@ -8,11 +8,11 @@ The following diagram shows the basic architecture of AWS IoT Greengrass.
 Please refer to [What Is AWS IoT Greengrass?](https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html) for more information about AWS IoT Greengrass.
 
 ## Preparation
-- 3 PYNQ-Z2 boards ( PYNQ v2.3)
+- 1 PYNQ-Z2 boards ( PYNQ v2.4)
 - AWS account
 - 1 router
 
-Conncet the 3 PYNQ-Z2 boards and host PC to LAN ports of router. Conncet WAN port of router to the Internet.
+Conncet the PYNQ-Z2 boards and host PC to LAN ports of router. Conncet WAN port of router to the Internet.
 ![](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/first.jpg)
 
 ## Step by Step
@@ -52,7 +52,7 @@ sudo addgroup --system ggc_group
   ![finish](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.2.png)
 - ### Run the Core
   ***Tip: This part you can refer to [this](https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/gg-device-start.html)***
-  1. Download the AWS IoT Greengrass Core software installation package. Choose the CPU architecture and distribution (and operating system, if necessary) that best describe your core device. This time we choose ARMv7l for Raspbian package. The download link is [here](https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/1.9.2/greengrass-linux-armv7l-1.9.2.tar.gz)
+  1. Download the AWS IoT Greengrass Core software installation package. Choose the CPU architecture and distribution (and operating system, if necessary) that best describe your core device. This time we choose ARMv7l for Raspbian package. The download link is [here](https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/1.10.1/greengrass-linux-armv7l-1.10.1.tar.gz)
   2. In the previous step, you downloaded two files to your computer:  
     - *greengrass-OS-architecture-1.9.2.tar.gz* This compressed file contains the AWS IoT Greengrass Core software that runs on the core device.  
     - *hash-setup.tar.gz* This compressed file contains security certificates that enable secure communications between AWS IoT and the config.json file that contains configuration information specific to your AWS IoT Greengrass core and the AWS IoT endpoint.
@@ -60,7 +60,7 @@ sudo addgroup --system ggc_group
     The commands for example:  
     ```shell
     cd path-to-downloaded-files
-    scp greengrass-OS-architecture-1.9.2.tar.gz xilinx@IP-address:/home/xilinx
+    scp greengrass-linux-armv7l-1.10.1.tar.gz xilinx@IP-address:/home/xilinx
     scp hash-setup.tar.gz xilinx@IP-address:/home/xilinx
     ```
   3. Open a terminal on the AWS IoT Greengrass core device and navigate to the folder that contains the compressed files.  
@@ -69,7 +69,7 @@ sudo addgroup --system ggc_group
     - The second command copies the certificates into the /greengrass/certs folder and the config.json file into the /greengrass/config folder (through the -C /greengrass argument).
   ```shell
   cd path-to-compressed-files
-  sudo tar -xzvf greengrass-OS-architecture-1.9.2.tar.gz -C /
+  sudo tar -xzvf greengrass-linux-armv7l-1.10.1.tar.gz -C /
   sudo tar -xzvf hash-setup.tar.gz -C /greengrass
   ```
   4. Download the appropriate ATS root CA certificate. The following example downloads AmazonRootCA1.pem. The wget -O parameter is the capital letter O.  
