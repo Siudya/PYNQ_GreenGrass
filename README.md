@@ -80,8 +80,12 @@ sudo addgroup --system ggc_group
   You can run the following command to confirm that the root.ca.pem file is not empty:  
   ```shell
   cat root.ca.pem
+  ```  
+  5. GreenGrass needs JRE.  
   ```
-  5. Start AWS IoT Greengrass on your core device.  
+  sudo apt-get install openjdk-8-jre
+  ```  
+  6. Start AWS IoT Greengrass on your core device.  
   ```shell
   cd /greengrass/ggc/core/
   sudo ./greengrassd start
